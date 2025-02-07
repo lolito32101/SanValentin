@@ -324,6 +324,7 @@ body {
 .text-contador {
     width: 360px;
     left: -30px;
+    top: -35px; 
     position: relative;
     bottom: auto;
     font-size: 35px;
