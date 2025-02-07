@@ -309,7 +309,18 @@ body {
 
 
 /* ----------- */
-
+.text-tit {
+    width: 360px;
+    top: -120px;
+    left: -30px;
+    right: 0;
+    position: relative;
+    bottom: auto;
+    font-size: 35px;
+    text-align: center;
+    font-family: "Indie Flower";
+    border: #4D2319;
+}
 .text-contador {
     width: 360px;
     left: -30px;
