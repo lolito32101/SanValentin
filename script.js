@@ -31,58 +31,41 @@ document.addEventListener('keydown', function (e) {
 });
 
 
+const fechaObjetivo = new Date("2025-02-14T00:00:00-05:00").getTime();
 
-let tiempoRestante = localStorage.getItem("contador") ? parseInt(localStorage.getItem("contador")) : 5; // 10 minutos en segundos
-/* 
-
-RESETEAR CONTADOR
-let tiempoRestante = 5; // Siempre inicia en 5 SEGUNDOS
-localStorage.setItem("contador", tiempoRestante); 
-
-*/
+function obtenerTiempoRestante() {
+    let ahora = Date.now();
+    let tiempoRestante = Math.max(0, Math.floor((fechaObjetivo - ahora) / 1000));
+    return tiempoRestante;
+}
 
 
+function formatearTiempo(segundos) {
+    let dias = Math.floor(segundos / 86400);
+    let horas = Math.floor((segundos % 86400) / 3600);
+    let minutos = Math.floor((segundos % 3600) / 60);
+    let segundosRestantes = segundos % 60;
+    return `${String(dias).padStart(2, '0')}d : ${String(horas).padStart(2, '0')}h : ${String(minutos).padStart(2, '0')}m : ${String(segundosRestantes).padStart(2, '0')}s`;
+}
 
-let tiempoInicial = 10 * 60 * 1000; // 10 minutos en milisegundos
+function actualizarContador() {
+    let contadorElemento = document.getElementById("contador");
+    let descargaElemento = document.getElementById("descarga");
+    let tiempoRestante = obtenerTiempoRestante();
 
-        function obtenerTiempoRestante() {
-            let tiempoFin = localStorage.getItem("tiempoFin");
+    if (tiempoRestante > 0) {
+        contadorElemento.textContent = formatearTiempo(tiempoRestante);
+    } else {
+        contadorElemento.style.display = "none"; // Oculta el h1
+        descargaElemento.style.display = "block"; // Muestra el botón
+        clearInterval(intervalo); // Detiene el contador
+    }
+}
 
-            if (!tiempoFin) {
-                let ahora = Date.now();
-                tiempoFin = ahora + tiempoInicial;
-                localStorage.setItem("tiempoFin", tiempoFin);
-            }
+function iniciarContador() {
+    actualizarContador();
+    intervalo = setInterval(actualizarContador, 1000);
+}
 
-            let tiempoRestante = Math.max(0, Math.floor((tiempoFin - Date.now()) / 1000));
-            return tiempoRestante;
-        }
-
-        function formatearTiempo(segundos) {
-            let minutos = Math.floor(segundos / 60);
-            let segundosRestantes = segundos % 60;
-            return `${String(minutos).padStart(2, '0')}:${String(segundosRestantes).padStart(2, '0')}`;
-        }
-
-        function actualizarContador() {
-            let contadorElemento = document.getElementById("contador");
-            let descargaElemento = document.getElementById("descarga");
-            let tiempoRestante = obtenerTiempoRestante();
-
-            if (tiempoRestante > 0) {
-                contadorElemento.textContent = formatearTiempo(tiempoRestante);
-            } else {
-                contadorElemento.style.display = "none"; // Oculta el h1
-                descargaElemento.style.display = "block"; // Muestra el botón
-                localStorage.removeItem("tiempoFin"); // Borra el tiempo guardado
-                clearInterval(intervalo); // Detiene el contador
-            }
-        }
-
-        function iniciarContador() {
-            actualizarContador();
-            intervalo = setInterval(actualizarContador, 1000);
-        }
-
-        let intervalo;
-        iniciarContador();
+let intervalo;
+iniciarContador();
