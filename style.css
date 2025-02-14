@@ -281,8 +281,9 @@ body {
 
 .download-section {
     text-align: center;
-    margin-top: 485px;
+   padding-top: 445px;
     position: relative;
+
 }
 
 .download-section a {
@@ -300,6 +301,7 @@ body {
     cursor: pointer;
     transition: 0.3s;
     box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.2);
+
 }
 
 .download-section button:hover {
@@ -326,7 +328,7 @@ body {
 .text-contador {
     width: 360px;
     left: -30px;
-    top: -35px; 
+    top: -15px; 
     position: relative;
     bottom: auto;
     font-size: 35px;
@@ -335,8 +337,15 @@ body {
     border: #4D2319;
 
 }
+.descarga {
+    position: relative;
+
+}
+
 
 #descarga {
     display: none;
+    position: relative;
+ 
     /* Oculto por defecto */
 }
