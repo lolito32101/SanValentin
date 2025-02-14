@@ -6,7 +6,7 @@ body {
     margin: 0;
     padding: 0;
     overflow: hidden;
-    background: #fae2bf;
+    background: #f2acac;
 }
 
 .wrapper {
@@ -290,7 +290,7 @@ body {
 }
 
 .download-section button {
-    background-color: #fae2bf;
+    background-color: #f2acac;
     color: #000;
     border: none;
     padding: 12px 20px;
@@ -303,7 +303,7 @@ body {
 }
 
 .download-section button:hover {
-    background-color: #e5c8a0;
+    background-color: #c65a5a;
     transform: scale(1.05);
 }
 
@@ -320,7 +320,9 @@ body {
     text-align: center;
     font-family: "Indie Flower";
     border: #4D2319;
+
 }
+
 .text-contador {
     width: 360px;
     left: -30px;
