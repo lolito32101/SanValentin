@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+    <title>Te Amo ❤️</title>
+	<link rel="icon" type="image/x-icon" href="ico.ico">
+	<link rel="stylesheet" href="./carta_style.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+</head>
+
+<body>
+	<div class="book">
+		<input type="checkbox" id="c1">
+		<input type="checkbox" id="c2">
+		<input type="checkbox" id="c3">
+		<input type="checkbox" id="c4">
+		<input type="checkbox" id="c5">
+		<input type="checkbox" id="c6">
+		<input type="checkbox" id="c7">
+		<!-- <div id="cover"><img src="1.jpg"></div> -->
+		<div class="flip-book">
+
+			<div class="flip" id="p1">
+
+				<div class="back">
+					<!-- <img src="2.jpg"> -->
+					<label class="back-btn" for="c1">🢀</label>
+				</div>
+
+				<div class="portada">
+					<div class="portada_container">
+						<div class="portada_tit">
+							Para ti
+						</div>
+						<div class="portada_gif">
+							<img src="love.png">
+						</div>
+					</div>
+					<div class="portada_inferior">
+						<div class="text_aviso_portada">
+							Click para Abrir 🢂
+						</div>
+						<div class="boton_portada">
+							<label class="next-btn2" for="c1">
+								<img src="open.png" alt="Next" style="cursor: pointer;">
+							</label>
+						</div>
+					</div>
+				</div>
+
+			</div>
+
+
+			<div class="flip" id="p2">
+
+				<div class="back">
+					<!-- <img src="3.jpg"> -->
+					<label class="back-btn" for="c2">🢀</label>
+				</div>
+
+				<div class="pagina1">
+					<div class="text-one">Feliz
+					</div>
+					<div class="heart"></div>
+					<div class="smile"></div>
+					<div class="eyes"></div>
+
+					<label class="next-btn" for="c2">🢂</label>
+				</div>
+
+			</div>
+
+			<div class="flip" id="p3">
+
+				<div class="back">
+					<label class="back-btn" for="c3">🢀</label>
+				</div>
+
+				<div class="pagina2">
+					<div class="text_pag2">
+						<p> Hola cariño, no sé en qué momento estarás leyendo esto. Solo paso a decirte un gran feliz
+							día
+							del san Valentín y que te quiero mucho❤️. Eres una mujer maravillosa, siempre me demostraste
+							qué
+							no necesitas de alguien para poder cumplir tus gustos. Pero también me gustaría que me
+							dijeras
+							que es lo que necesitas o en que te puedo cumplir.
+						</p>
+					</div>
+
+					<label class="next-btn" for="c3">🢂</label>
+				</div>
+			</div>
+
+			<div class="flip" id="p4">
+
+				<div class="back">
+					<label class="back-btn" for="c4">🢀</label>
+				</div>
+
+				<div class="pagina2">
+					<div class="text_pag2">
+						<p> Si bien este es nuestro segundo intento de poder estar juntos.<br>
+							No quiero prometer nada ya que no sé qué nos depara el futuro,
+							lo único que quiero es disfrutar de cada momento que pase contigo.✨<br>
+							No vayas a pensar que estoy jugando o algo así. Yo en realidad estoy
+							muy feliz de poder estar de nuevo a tu lado (aunque no sea todos los días)
+						</p>
+					</div>
+
+					<label class="next-btn" for="c4">🢂</label>
+				</div>
+			</div>
+
+			<div class="flip" id="p5">
+
+				<div class="back">
+					<label class="back-btn" for="c5">🢀</label>
+				</div>
+
+				<div class="pagina2">
+					<div class="text_pag2">
+						<p> como digo no quiero hacer promesas, pero si quiero demostrarte en hechos
+							que aun te quiero y en que en realidad quiero que esto pueda funcionar.🫂🫶
+						</p>
+					</div>
+
+					<label class="next-btn" for="c5">🢂</label>
+				</div>
+			</div>
+
+			<div class="flip" id="p6">
+
+				<div class="back">
+					<label class="back-btn" for="c6">🢀</label>
+				</div>
+
+				<div class="pagina2">
+					<div class="text_pag2">
+						<p>¿Aun recuerdas como pasamos el 14 del año pasado? ¿Cuándo apenas te estaba
+							conociendo, cuando me decías que estabas por cancelarme en último momento?
+							Jajaja <br>
+							En esta ocasión será diferente, ya que no seremos simples amigos como en
+							ese entonces. <br>Te amo❤️
+						</p>
+					</div>
+
+					<label class="next-btn" for="c6">🢂</label>
+				</div>
+			</div>
+
+			<div class="flip" id="p7">
+
+				<div class="back">
+					<label class="back-btn" for="c7">🢀</label>
+				</div>
+
+				<div class="pagina2">
+					<div class="text_pag2">
+						<p>
+							Espero que este pequeño detalle te haya gustado, pero no creas que es el único.
+							Esto es solo el comienzo, así que prepárate, aún tengo más cosas más para ti.❤️🎁
+						</p>
+					</div>
+
+					<label class="next-btn" for="c7">🢂</label>
+				</div>
+			</div>
+		</div>
+	</div>
+
+
+
+	<script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.3.1/dist/confetti.browser.min.js"></script>
+
+	<script>
+		setInterval(() => {
+			confetti({
+				particleCount: 100,
+				spread: 60,
+				origin: { x: 0.5, y: 0.5 }
+			});
+		}, 2000);
+
+		document.addEventListener("DOMContentLoaded", function () {
+			const audio = new Audio("Contigo2025.mp3");
+
+			const playAudio = () => {
+				audio.play().catch(error => {
+					console.log("Reproducción automática bloqueada, esperando interacción del usuario.");
+				});
+			};
+
+			playAudio();
+
+			document.body.addEventListener("click", () => {
+				audio.play();
+			}, { once: true });
+		});
+
+	</script>
+</body>
+
+</html>
