@@ -30,8 +30,8 @@ document.addEventListener('keydown', function (e) {
     }
 });
 
-
-const fechaObjetivo = new Date("2025-02-14T00:00:00-05:00").getTime();
+const fechaObjetivo = Date.now() + 5000;
+//const fechaObjetivo = new Date("2025-02-14T00:00:00-05:00").getTime();
 
 function obtenerTiempoRestante() {
     let ahora = Date.now();
